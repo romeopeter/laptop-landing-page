@@ -1,0 +1,187 @@
+:root {
+	/*--primary: #585772;*/
+	/*--secondary: #5f5f79;*/
+	--font:  Arial, Helvetica, sans-serif;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-shadow: border-box;
+}
+
+body {
+	font-family: var(--font);
+}
+
+/* img {
+	height: 55px; 
+	width: 55px;
+} */
+
+/* Header */
+header {
+	/*background: lightblue;*/
+	display: flex;
+	width: 90%;
+	height: 10vh;
+	margin: auto;
+	align-items: center;
+}
+
+button {
+	font-family: var(--font);
+	width: 150px;
+	height: 50px;
+	font-size: 1rem;
+	cursor: pointer;
+}
+
+/* ** */
+.logo-container,
+.nav-links,
+.cart {
+	display: flex;
+}
+
+/* Logo container */
+.logo-container {
+	flex: 1
+}
+
+.logo {
+	font-weight: 400;
+	margin: 5px;
+}
+
+/* Nav */
+nav {
+	flex: 2;
+}
+
+.nav-links {
+	justify-content: space-around;
+	list-style: none;
+}
+
+.nav-link {
+	color:  #5f5f79 /*var(--secondary)*/;
+	font-size: 18px;
+	text-decoration: none;
+}
+
+/* Cart */
+.cart  {
+	flex: 1;
+	justify-content: flex-end;
+}
+
+/* Presentation */
+.presentation {
+	display: flex;
+	width: 90%;
+	margin: auto;
+	min-height: 80vh;
+	align-items: center;
+}
+
+.introduction {
+	flex: 1;
+}
+
+.intro-text  h1 {
+	font-size: 2.12rem;
+	font-weight: 500;
+	/* Create linear and adds to text bacground */
+	background: linear-gradient(to right, #494964, #6f6f89);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.intro-text p {
+	margin-top: 10px;
+	font-size: 1rem;
+	color:  #585772 /*var(--primary)*/;
+}
+
+.cta {
+	padding: 50px 0px 0px 0px;
+}
+
+.cta-select {
+	border: 2px solid /*#c36cbb*/ #00e676;
+	background: transparent;
+	/*color: #c36cbb;*/
+	color: #00e676;
+}
+
+.cta-add {
+	/*background: #c36cbb;*/
+	background: #00e676;
+	border: none;
+	color: #ffffff;
+	margin: 30px 0px 0px 30px;
+}
+
+.cover {
+	flex: 1;
+}
+
+/* Cover img animation */
+@keyframes drop {
+	0% {
+		opacity: 0;
+		transform: translateY(-80px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+.cover img {
+	height: 60vh;
+	width: auto;
+	/* Add a drop shadow to an image (png) */
+	filter: drop-shadow(0px 5px 3px #000);
+	animation: drop 1.5s ease;
+}
+/* Background svg */
+.big-circle {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: -1;
+	opacity: 0.6;
+	height: 80%;
+	/*background:  #00e676;*/
+}
+.medium-circle {
+	position: absolute;
+	top: 30%;
+	right: 30%;
+	z-index: -1;
+	height: 60%;
+	opacity: 0.5;
+}
+.small-circle {
+	position: absolute;
+	left: 20%;
+	bottom: 0%;
+	z-index: 1;	
+	opacity: 0.4;
+}
+
+/* Laptop select */
+.laptop-select {
+	background: lightblue;
+	width: 15%;
+	display: flex;
+	justify-content: space-around;
+	position: absolute;
+	right: 20%;
+}
+
+/* Media queries */ 
+
+@media screen()

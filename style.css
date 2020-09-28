@@ -1,0 +1,276 @@
+:root {
+	--primary-color:  #5f5f79;
+	--secondary-color: #00e676;
+	--gap: 20px;
+	--font-family: sans-serif, Haveltica;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: var(--font-family);
+}
+
+/*  navigation */
+nav {
+	display: grid;
+	grid-gap: var(--gap);
+	/*grid-template-areas: 'logo nav-links nav-links cart burger';*/
+	grid-template-columns: repeat(auto-fit, minmax(auto, 1fr));
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+	min-height: 8vh;
+}
+
+button {
+	font-family: var(--font-family);
+	font-size: 1rem;
+	width: 150px;
+	height: 50px;
+	cursor: pointer;
+}
+
+.nav-links {
+	display: flex;
+	justify-content: space-around;
+	list-style: none;
+	width: 50%;
+}
+
+.nav-links .nav-link {
+	text-transform: uppercase;
+	text-decoration: none;
+	color: var(--primary-color);
+	font-size: 18px;
+	font-weight: 500;
+}
+
+.burger {
+	grid-area: burger;
+	display: none;
+}
+
+.burger div {
+	width: 30px;
+	height: 2px;
+	background: var(--primary-color);
+	margin: 5px;
+	transition: all 0.5s ease-in-out;
+}
+
+
+/* Presentation */
+.presentation {
+	display: grid;
+	grid-gap: var(--gap);
+	grid-template-columns: repeat(2, 1fr);
+	align-items: center;
+	justify-items: center;
+	/*width: 90%;*/
+	height: 80vh;
+	margin: auto;
+}
+
+/* Introduction*/
+.introduction {
+	/*border: 1px solid skyblue;*/
+	text-align: center;
+}
+
+.intro-text h1 {
+	font-size: 2.12rem;
+	font-weight: 500;
+	background: linear-gradient( to right, #494964, #6f6f89);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.intro-text p {
+	font-size: 1.10rem;
+	margin-top: 10px;
+	color: var(--primary-color);
+}
+
+.cta {
+	padding: 50px 0px 0px 0px;
+}
+
+button.cta-select {
+	border: 2px solid var(--secondary-color);
+	background: transparent;
+	color: var(--secondary-color);
+}
+
+button.cta-add  {
+	border: none;
+	background: var(--secondary-color);
+	color: #fff;
+	margin: 30px 0px 0px 30px;
+}
+
+/* Cover */
+.cover {
+	display: flex;
+	justify-content: center;
+	height: 60vh;
+}
+
+@keyframes drop {
+	from {
+		opacity: 0;
+		transform: translateY(-80px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+
+.cover img {
+	height: 100%;
+	max-width: auto;
+	object-fit: contain;
+	filter: drop-shadow(0px 3px 5px #000);
+	animation: drop 1.0s ease-in-out;
+}
+
+/* Slides signs */
+.laptop-select {
+	position: absolute;
+	right: 20%;
+	display: grid;
+	grid-gap: var(--gap);
+	grid-template-columns: repeat(5, 1fr);
+}
+
+/* Background opaque eclipse */
+.big-circle {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: -1;
+	height: 80vh;
+	opacity: 0.4;
+}
+
+.medium-circle {
+	position: absolute;
+	top: 30%;
+	right: 30%;
+	z-index: -1;
+	height: 60%;
+	opacity: 0.3;
+}
+
+.small-circle {
+	position: absolute;
+	z-index: -1;
+	left: 20%;
+	bottom: 0px;
+	height: 50%;
+	opacity: 0.2;
+}
+
+
+/* Mobile Screens */
+@media screen and (max-width: 750px) {
+	body {
+		overflow-x: hidden;
+	}
+
+	.nav-links {
+		position: absolute;
+		right: 0;
+		top: 8vh;
+		width: 100%;
+		height: 92vh;
+		background: transparent;
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		transform: translateX(100%);
+
+		transition: transform 0.5s ease-in-out;
+		z-index: 1;
+	}
+
+	.nav-links li {
+		opacity: 0;
+	}
+
+	.burger {
+		display: block;
+		cursor: pointer;
+	}
+
+	/* Slid-in links when burger is cliked */
+	.nav-active {
+		transform: translateX(0%);
+		background: #fff;
+	}
+
+	/* Rotate burger */
+	.toggle .line1 {
+		transform: rotate(-45deg) translate(-4px, 6px);
+	}
+
+	.toggle .line2 {
+		opacity: 0;
+	} 
+
+	.toggle .line3 {
+		transform: rotate(45deg) translate(-5px, -6px);
+	}
+
+	/* Slider animation */
+	@keyframes navLinkFade {
+		from {
+			opacity: 0;
+			transform: translateX(50px);
+		}
+
+		to {
+			opacity: 1;
+			transform: translateX(0px);
+		}
+	}
+}
+
+@media screen and (max-width: 1020px) {
+	.presentation {
+		grid-template-columns: 1fr;
+	}
+
+	.introduction {
+		margin-top: 10vh;
+		text-align: center;
+	}
+
+	.intro-text p {
+		margin-top: 8px;
+		line-height: 1.5;
+		padding: 5px;
+	}
+
+	.cta {
+		padding-top: 10px;
+	}
+
+	button.cta-add  {
+		margin: 30px 0px 0px 10px;
+	}
+
+	/* Slides signs */
+	.laptop-select {
+		right: 30%;
+		bottom: 0;
+		grid-gap: 50px;
+	}
+}
