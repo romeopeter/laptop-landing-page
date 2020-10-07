@@ -3,7 +3,7 @@
 <hr />
 
 <blockquote>
-    page design was done Figma
+    page design was done in Figma
 </blockquote>
 
 <br>
