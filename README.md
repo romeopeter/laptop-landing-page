@@ -15,4 +15,5 @@
 -   Clone or download project
 -   Right-click on `index.html` and open with prefered browser.
 <hr />
-![](https://res.cloudinary.com/romie/image/upload/v1602117602/landing%20pages/laptoplandingpage.png)
+
+![layout image](https://res.cloudinary.com/romie/image/upload/v1602117602/landing%20pages/laptoplandingpage.png)
